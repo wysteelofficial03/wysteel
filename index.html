@@ -1,75 +1,184 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#101010">
-  <meta name="description" content="WYSTEEL — Ekspresikan Gayamu. Aksesori stainless steel: gelang, cincin, dan kalung.">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="WYSTEEL — aksesori stainless steel berupa gelang, cincin, dan kalung. Ekspresikan Gayamu.">
+  <meta name="theme-color" content="#111111">
   <title>WYSTEEL | Ekspresikan Gayamu</title>
   <style>
-    :root{--bg:#0b0b0c;--panel:#151516;--silver:#c9cbd0;--muted:#a6a7ab;--white:#f7f7f8;--line:#303034}
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{margin:0;background:var(--bg);color:var(--white);font-family:Arial,Helvetica,sans-serif;line-height:1.6}
-    a{color:inherit;text-decoration:none}
-    .wrap{width:min(1100px,92%);margin:auto}
-    header{position:sticky;top:0;z-index:10;background:rgba(11,11,12,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
-    .nav{min-height:70px;display:flex;align-items:center;justify-content:space-between;gap:20px}
-    .brand{font-size:1.5rem;font-weight:900;letter-spacing:.18em}
-    .brand span{color:var(--silver)}
-    nav{display:flex;gap:22px;flex-wrap:wrap}
-    nav a{font-size:.92rem;color:#ddd}
-    nav a:hover{color:white}
-    .hero{padding:82px 0 76px;background:radial-gradient(ellipse at 78% 20%,#303034 0%,#171719 26%,#0b0b0c 66%)}
-    .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:40px}
-    .eyebrow{color:var(--silver);text-transform:uppercase;letter-spacing:.22em;font-size:.78rem;font-weight:bold}
-    h1{font-size:clamp(2.7rem,7vw,5.2rem);line-height:1.02;margin:15px 0 20px;letter-spacing:-.04em}
-    h1 em{font-style:normal;color:var(--silver)}
-    .lead{color:#d0d0d3;max-width:560px;font-size:1.08rem}
-    .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
-    .btn{display:inline-block;padding:12px 20px;border:1px solid var(--silver);border-radius:5px;font-weight:bold}
-    .btn.primary{background:var(--silver);color:#111}
-    .btn:hover{transform:translateY(-1px);opacity:.9}
-    .hero-art{min-height:320px;border:1px solid #45454a;border-radius:8px;background:linear-gradient(145deg,#252528,#0f0f10);display:grid;place-items:center;position:relative;overflow:hidden}
-    .hero-art:before,.hero-art:after{content:"";position:absolute;border:1px solid #aeb0b7;border-radius:50%;transform:rotate(-25deg)}
-    .hero-art:before{width:190px;height:270px;box-shadow:0 0 30px #ffffff0c}
-    .hero-art:after{width:140px;height:220px;transform:rotate(35deg)}
-    .hero-art .monogram{position:relative;z-index:1;text-align:center;letter-spacing:.22em}
-    .monogram strong{display:block;font-size:2.5rem}
-    .monogram small{color:var(--silver);letter-spacing:.32em}
-    section{padding:68px 0}
-    .section-head{margin-bottom:28px}
-    .section-head .eyebrow{margin-bottom:6px}
-    h2{font-size:clamp(1.8rem,4vw,2.6rem);line-height:1.15;margin:0 0 10px}
-    .section-head p{color:var(--muted);max-width:650px;margin:0}
-    .products{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-    .product{background:var(--panel);border:1px solid var(--line);border-radius:8px;overflow:hidden}
-    .product-art{height:190px;display:grid;place-items:center;background:linear-gradient(135deg,#262629,#111112);color:var(--silver);font-size:3.5rem}
-    .product-content{padding:20px}
-    .product h3{margin:0 0 8px;font-size:1.25rem}
-    .product p{color:var(--muted);margin:0 0 14px}
-    .tag{font-size:.78rem;color:#d8d8dc;border:1px solid #55555a;border-radius:30px;padding:5px 10px;display:inline-block}
-    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start}
-    .about-card{padding:25px;border:1px solid var(--line);border-radius:8px;background:var(--panel)}
-    .about-card h3{margin-top:0}
-    .about-card p,.about-card li{color:#c2c2c6}
-    .promo{background:linear-gradient(120deg,#202023,#111112);border:1px solid #444449;border-radius:10px;padding:35px;display:flex;justify-content:space-between;align-items:center;gap:25px}
-    .promo p{color:#c7c7cb;margin-bottom:0}
-    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
-    .contact-card{padding:24px;border:1px solid var(--line);border-radius:8px;background:var(--panel)}
-    .contact-card p{color:var(--muted)}
-    .contact-links{display:flex;gap:10px;flex-wrap:wrap}
-    footer{border-top:1px solid var(--line);padding:25px 0;color:#a6a6ab;font-size:.9rem}
-    footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
-    @media(max-width:760px){.hero-grid,.about-grid,.contact-grid{grid-template-columns:1fr}.hero{padding:56px 0}.hero-art{min-height:260px}nav{gap:12px}.nav{align-items:flex-start;padding:16px 0;flex-direction:column}.products{grid-template-columns:1fr}.product-art{height:160px}.promo{align-items:flex-start;flex-direction:column}section{padding:52px 0}}
+    :root {
+      --bg: #090909;
+      --panel: #131313;
+      --panel-2: #1b1b1b;
+      --text: #f5f5f5;
+      --muted: #b8b8b8;
+      --silver: #d8d8d8;
+      --line: rgba(255,255,255,.13);
+      --max: 1120px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 86px; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    .wrap { width: min(var(--max), calc(100% - 40px)); margin-inline: auto; }
+    .site-header {
+      position: sticky; top: 0; z-index: 20;
+      background: rgba(9,9,9,.94);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 22px; }
+    .brand { font-size: 1.45rem; letter-spacing: .16em; font-weight: 800; white-space: nowrap; }
+    .brand span { color: #a9a9a9; }
+    .nav-links { display: flex; align-items: center; gap: 22px; }
+    .nav-links a { color: #d0d0d0; font-size: .92rem; transition: color .2s; }
+    .nav-links a:hover, .nav-links a:focus-visible { color: #fff; }
+    .menu-toggle {
+      display: none; border: 1px solid var(--line); background: var(--panel);
+      color: var(--text); padding: 9px 12px; border-radius: 8px; font-size: 1rem;
+    }
+    .hero { padding: 82px 0 74px; overflow: hidden; }
+    .hero-grid { display: grid; grid-template-columns: 1.05fr .95fr; align-items: center; gap: 48px; }
+    .eyebrow { color: #c6c6c6; font-size: .78rem; letter-spacing: .22em; text-transform: uppercase; font-weight: 700; }
+    h1 { font-size: clamp(3rem, 7vw, 5.7rem); line-height: .99; letter-spacing: -.055em; margin: 18px 0 22px; }
+    h1 em { font-style: normal; color: #bdbdbd; }
+    .lead { color: var(--muted); max-width: 570px; font-size: 1.08rem; }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      min-height: 46px; padding: 12px 19px; border: 1px solid #777;
+      border-radius: 7px; font-weight: 700; font-size: .93rem;
+      transition: transform .2s, background .2s, border-color .2s;
+    }
+    .btn:hover { transform: translateY(-2px); border-color: #fff; }
+    .btn-primary { background: #ededed; color: #111; border-color: #ededed; }
+    .btn-primary:hover { background: #fff; }
+    .hero-art {
+      min-height: 390px; position: relative; overflow: hidden; border-radius: 18px;
+      border: 1px solid var(--line);
+      background:
+        radial-gradient(ellipse at 28% 28%, rgba(255,255,255,.2), transparent 32%),
+        radial-gradient(ellipse at 78% 70%, rgba(180,180,180,.18), transparent 35%),
+        linear-gradient(135deg, #252525, #080808 65%);
+      display: grid; place-items: center;
+    }
+    .hero-art::before, .hero-art::after {
+      content: ""; position: absolute; border: 15px solid rgba(230,230,230,.72);
+      width: 175px; height: 175px; border-radius: 50%;
+      box-shadow: inset 0 0 20px rgba(255,255,255,.4), 0 12px 35px rgba(0,0,0,.6);
+      transform: rotate(-25deg) scaleX(.82);
+    }
+    .hero-art::after {
+      width: 125px; height: 125px; border-width: 9px; transform: translate(76px, 52px) rotate(22deg) scaleX(.82);
+      border-color: rgba(160,160,160,.8);
+    }
+    .hero-stamp {
+      position: absolute; bottom: 22px; left: 22px; z-index: 2;
+      padding: 13px 16px; background: rgba(0,0,0,.58); border: 1px solid var(--line);
+      border-radius: 8px; backdrop-filter: blur(8px);
+    }
+    .hero-stamp strong { display: block; letter-spacing: .2em; font-size: .92rem; }
+    .hero-stamp small { color: #c5c5c5; letter-spacing: .12em; font-size: .66rem; }
+    section { padding: 76px 0; }
+    .section-head { max-width: 680px; margin-bottom: 30px; }
+    h2 { font-size: clamp(2rem, 4vw, 3rem); letter-spacing: -.04em; line-height: 1.1; margin: 10px 0 14px; }
+    .section-head p, .muted { color: var(--muted); }
+    .products { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .product {
+      border: 1px solid var(--line); background: var(--panel); border-radius: 13px; overflow: hidden;
+      transition: transform .2s, border-color .2s;
+    }
+    .product:hover { transform: translateY(-4px); border-color: rgba(255,255,255,.35); }
+    .product-art {
+      min-height: 190px; display: grid; place-items: center; position: relative; overflow: hidden;
+      background: radial-gradient(circle at 50% 40%, #3b3b3b, #181818 62%, #101010);
+      color: #e5e5e5; font-size: 5.5rem; font-family: Georgia, serif;
+    }
+    .product-art::after { content: ""; position: absolute; width: 110px; height: 110px; border: 8px solid rgba(225,225,225,.65); border-radius: 50%; transform: rotate(-25deg) scaleX(.8); }
+    .product:nth-child(2) .product-art::after { width: 82px; height: 82px; border-width: 10px; }
+    .product:nth-child(3) .product-art::after { width: 70px; height: 70px; border-width: 5px; transform: translateY(10px); }
+    .product-art span { position: relative; z-index: 1; opacity: 0; }
+    .product-content { padding: 22px; }
+    h3 { margin: 0 0 9px; font-size: 1.15rem; }
+    .product-content p { color: var(--muted); margin: 0 0 17px; font-size: .94rem; }
+    .tag { display: inline-block; padding: 5px 10px; border: 1px solid var(--line); border-radius: 100px; color: #d1d1d1; font-size: .75rem; }
+    .about-section { background: #101010; border-block: 1px solid rgba(255,255,255,.06); }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .info-card { background: #161616; border: 1px solid var(--line); border-radius: 12px; padding: 24px; }
+    .info-card p, .info-card li { color: var(--muted); }
+    .info-card ul { padding-left: 20px; margin-bottom: 0; }
+    .promo-card {
+      border: 1px solid #505050; border-radius: 15px; padding: clamp(24px, 5vw, 48px);
+      background: linear-gradient(115deg, #242424, #111 65%);
+      display: flex; align-items: center; justify-content: space-between; gap: 24px;
+    }
+    .promo-card p { color: var(--muted); margin-bottom: 0; max-width: 620px; }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .contact-card { border: 1px solid var(--line); background: var(--panel); padding: 25px; border-radius: 12px; }
+    .contact-card p { color: var(--muted); margin: 0 0 18px; }
+    .contact-card .btn { margin-top: 3px; }
+    footer { border-top: 1px solid var(--line); padding: 24px 0; color: #b8b8b8; font-size: .88rem; }
+    .footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 14px; }
+    .note { color: #9d9d9d; font-size: .86rem; margin-top: 18px; }
+    :focus-visible { outline: 2px solid white; outline-offset: 3px; }
+    @media (max-width: 800px) {
+      .nav { min-height: 68px; }
+      .menu-toggle { display: inline-flex; }
+      .nav-links {
+        display: none; position: absolute; top: 68px; left: 0; right: 0;
+        padding: 18px 20px 22px; background: #0b0b0b; border-bottom: 1px solid var(--line);
+        flex-direction: column; align-items: stretch; gap: 0;
+      }
+      .nav-links.open { display: flex; }
+      .nav-links a { padding: 11px 0; }
+      .hero { padding-top: 52px; }
+      .hero-grid { grid-template-columns: 1fr; gap: 32px; }
+      .hero-art { min-height: 300px; }
+      .products { grid-template-columns: 1fr; }
+      .product { display: grid; grid-template-columns: 130px 1fr; }
+      .product-art { min-height: 100%; }
+      .product-art::after { width: 68px; height: 68px; border-width: 6px; }
+      .product:nth-child(2) .product-art::after { width: 55px; height: 55px; border-width: 7px; }
+      .product:nth-child(3) .product-art::after { width: 48px; height: 48px; border-width: 4px; }
+      .product-content { padding: 18px; }
+      .about-grid, .contact-grid { grid-template-columns: 1fr; }
+      .promo-card { align-items: flex-start; flex-direction: column; }
+    }
+    @media (max-width: 420px) {
+      .wrap { width: min(var(--max), calc(100% - 28px)); }
+      .brand { font-size: 1.2rem; }
+      h1 { font-size: 3.25rem; }
+      .product { grid-template-columns: 100px 1fr; }
+      .product-content { padding: 14px; }
+      .product-content h3 { font-size: 1rem; }
+      .product-content p { font-size: .86rem; }
+      .footer-inner { align-items: flex-start; flex-direction: column; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition: none !important; }
+    }
   </style>
 </head>
 <body>
-  <header>
+  <header class="site-header">
     <div class="wrap nav">
-      <a class="brand" href="#home" aria-label="WYSTEEL Beranda">WY<span>STEEL</span></a>
-      <nav aria-label="Navigasi utama">
-        <a href="#home">Beranda</a><a href="#produk">Produk</a><a href="#tentang">Tentang</a><a href="#promosi">Promosi</a><a href="#kontak">Kontak</a>
+      <a class="brand" href="#home" aria-label="WYSTEEL beranda">WY<span>STEEL</span></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-links">Menu ☰</button>
+      <nav class="nav-links" id="nav-links" aria-label="Navigasi utama">
+        <a href="#home">Beranda</a>
+        <a href="#produk">Produk</a>
+        <a href="#tentang">Tentang</a>
+        <a href="#promosi">Promosi</a>
+        <a href="#kontak">Kontak</a>
       </nav>
     </div>
   </header>
@@ -81,53 +190,131 @@
           <div class="eyebrow">Stainless Steel Accessories</div>
           <h1>Ekspresikan<br><em>Gayamu.</em></h1>
           <p class="lead">Sentuhan aksesori yang simpel, modern, dan mudah dipadukan untuk menemani gaya sehari-hari. Temukan gelang, cincin, dan kalung pilihanmu bersama WYSTEEL.</p>
-          <div class="actions"><a class="btn primary" href="#produk">Lihat Produk</a><a class="btn" href="#kontak">Hubungi Kami</a></div>
+          <div class="actions">
+            <a class="btn btn-primary" href="#produk">Lihat Produk</a>
+            <a class="btn" href="#kontak">Hubungi Kami</a>
+          </div>
         </div>
-        <div class="hero-art" role="img" aria-label="Ilustrasi abstrak aksesori berwarna silver">
-          <div class="monogram"><strong>WYSTEEL</strong><small>EXPRESS YOUR STYLE</small></div>
+        <div class="hero-art" role="img" aria-label="Ilustrasi abstrak aksesori berwarna perak">
+          <div class="hero-stamp"><strong>WYSTEEL</strong><small>EXPRESS YOUR STYLE</small></div>
         </div>
       </div>
     </section>
 
     <section id="produk">
       <div class="wrap">
-        <div class="section-head"><div class="eyebrow">Koleksi Pilihan</div><h2>Aksesori untuk gayamu</h2><p>Pilih aksesori favorit yang melengkapi penampilanmu, dari gaya kasual hingga tampilan yang lebih rapi.</p></div>
-        <div class="products">
-          <article class="product"><div class="product-art" aria-hidden="true">◯</div><div class="product-content"><h3>Gelang Stainless Steel</h3><p>Detail sederhana dengan kesan modern untuk melengkapi gaya harian.</p><span class="tag">Pilihan sehari-hari</span></div></article>
-          <article class="product"><div class="product-art" aria-hidden="true">◇</div><div class="product-content"><h3>Cincin Stainless Steel</h3><p>Aksen minimalis yang mudah dipadukan dengan berbagai outfit.</p><span class="tag">Minimalis & modern</span></div></article>
-          <article class="product"><div class="product-art" aria-hidden="true">⌁</div><div class="product-content"><h3>Kalung Stainless Steel</h3><p>Sentuhan akhir untuk membuat penampilanmu terasa lebih personal.</p><span class="tag">Lengkapi gayamu</span></div></article>
+        <div class="section-head">
+          <div class="eyebrow">Koleksi Pilihan</div>
+          <h2>Aksesori untuk gayamu</h2>
+          <p>Pilih aksesori favorit yang melengkapi penampilanmu, dari gaya kasual hingga tampilan yang lebih rapi.</p>
         </div>
-        <p style="color:#a6a7ab;font-size:.88rem;margin-top:18px">Catatan: harga dan varian dapat ditambahkan setelah katalog produk tersedia.</p>
+        <div class="products">
+          <article class="product">
+            <div class="product-art" aria-hidden="true"><span>◯</span></div>
+            <div class="product-content"><h3>Gelang Stainless Steel</h3><p>Detail sederhana dengan kesan modern untuk melengkapi gaya harian.</p><span class="tag">Pilihan sehari-hari</span></div>
+          </article>
+          <article class="product">
+            <div class="product-art" aria-hidden="true"><span>◇</span></div>
+            <div class="product-content"><h3>Cincin Stainless Steel</h3><p>Aksen minimalis yang mudah dipadukan dengan berbagai outfit.</p><span class="tag">Minimalis &amp; modern</span></div>
+          </article>
+          <article class="product">
+            <div class="product-art" aria-hidden="true"><span>⌁</span></div>
+            <div class="product-content"><h3>Kalung Stainless Steel</h3><p>Sentuhan akhir untuk membuat penampilanmu terasa lebih personal.</p><span class="tag">Lengkapi gayamu</span></div>
+          </article>
+        </div>
+        <p class="note">Harga dan varian produk dapat ditambahkan setelah katalog tersedia.</p>
       </div>
     </section>
 
-    <section id="tentang" style="background:#101011">
+    <section class="about-section" id="tentang">
       <div class="wrap">
-        <div class="section-head"><div class="eyebrow">Tentang WYSTEEL</div><h2>Gaya personal, setiap hari</h2><p>WYSTEEL adalah brand/toko aksesori yang berfokus pada gelang, cincin, dan kalung berbahan stainless steel.</p></div>
+        <div class="section-head">
+          <div class="eyebrow">Tentang WYSTEEL</div>
+          <h2>Gaya personal, setiap hari</h2>
+          <p>WYSTEEL adalah toko aksesori yang menawarkan gelang, cincin, dan kalung berbahan stainless steel.</p>
+        </div>
         <div class="about-grid">
-          <div class="about-card"><h3>Identitas Kami</h3><p><strong>Nama usaha:</strong> WYSTEEL<br><strong>Tagline:</strong> “Ekspresikan Gayamu”<br><strong>Produk:</strong> Gelang, cincin, dan kalung stainless steel.</p></div>
-          <div class="about-card"><h3>Kenapa memilih aksesori kami?</h3><ul><li>Desain mudah dipadukan dengan berbagai gaya.</li><li>Pilihan aksesori untuk melengkapi penampilan.</li><li>Cocok dijadikan pilihan untuk penggunaan sehari-hari.</li></ul><p style="font-size:.85rem">Silakan sesuaikan klaim keunggulan dengan informasi produk dari pemasok.</p></div>
+          <div class="info-card">
+            <h3>Identitas Kami</h3>
+            <p><strong>Nama usaha:</strong> WYSTEEL<br><strong>Tagline:</strong> “Ekspresikan Gayamu”<br><strong>Produk:</strong> Gelang, cincin, dan kalung stainless steel.</p>
+          </div>
+          <div class="info-card">
+            <h3>Kenapa memilih aksesori kami?</h3>
+            <ul>
+              <li>Desain mudah dipadukan dengan berbagai gaya.</li>
+              <li>Pilihan aksesori untuk melengkapi penampilan.</li>
+              <li>Cocok untuk gaya sehari-hari.</li>
+            </ul>
+            <p class="note">Sesuaikan informasi keunggulan dengan detail produk dari pemasok.</p>
+          </div>
         </div>
       </div>
     </section>
 
     <section id="promosi">
       <div class="wrap">
-        <div class="promo"><div><div class="eyebrow">Temukan gayamu</div><h2 style="margin-top:8px">Detail kecil, gaya berbeda.</h2><p>Jelajahi koleksi WYSTEEL dan pilih aksesori yang paling menggambarkan dirimu.</p></div><a class="btn primary" href="#kontak">Tanya Produk</a></div>
+        <div class="promo-card">
+          <div>
+            <div class="eyebrow">Temukan gayamu</div>
+            <h2>Detail kecil, gaya berbeda.</h2>
+            <p>Jelajahi koleksi WYSTEEL dan pilih aksesori yang paling menggambarkan dirimu.</p>
+          </div>
+          <a class="btn btn-primary" href="#kontak">Tanya Produk</a>
+        </div>
       </div>
     </section>
 
     <section id="kontak">
       <div class="wrap">
-        <div class="section-head"><div class="eyebrow">Terhubung dengan kami</div><h2>Kontak & pemesanan</h2><p>Ikuti media sosial WYSTEEL untuk melihat informasi dan promosi produk.</p></div>
-        <div class="contact-grid">
-          <div class="contact-card"><h3>Instagram</h3><p>@official_wysteel</p><div class="contact-links"><a class="btn primary" href="https://www.instagram.com/official_wysteel/" target="_blank" rel="noopener noreferrer">Buka Instagram</a></div></div>
-          <div class="contact-card"><h3>TikTok</h3><p>@wysteel_official</p><div class="contact-links"><a class="btn primary" href="https://www.tiktok.com/@wysteel_official" target="_blank" rel="noopener noreferrer">Buka TikTok</a></div></div>
+        <div class="section-head">
+          <div class="eyebrow">Terhubung dengan kami</div>
+          <h2>Kontak &amp; pemesanan</h2>
+          <p>Ikuti media sosial WYSTEEL untuk melihat informasi dan promosi produk terbaru.</p>
         </div>
-        <p style="color:#a6a7ab;font-size:.9rem;margin-top:18px">Untuk menambahkan pemesanan WhatsApp atau marketplace, masukkan tautan toko/kontak yang benar.</p>
+        <div class="contact-grid">
+          <div class="contact-card">
+            <h3>Instagram</h3>
+            <p>@official_wysteel</p>
+            <a class="btn btn-primary" href="https://www.instagram.com/official_wysteel/" target="_blank" rel="noopener noreferrer">Buka Instagram ↗</a>
+          </div>
+          <div class="contact-card">
+            <h3>TikTok</h3>
+            <p>@wysteel_official</p>
+            <a class="btn btn-primary" href="https://www.tiktok.com/@wysteel_official" target="_blank" rel="noopener noreferrer">Buka TikTok ↗</a>
+          </div>
+        </div>
+        <p class="note">Untuk menambahkan pemesanan WhatsApp atau marketplace, masukkan tautan toko/kontak yang benar.</p>
       </div>
     </section>
   </main>
-  <footer><div class="wrap"><span>© <span id="year">2026</span> WYSTEEL</span><span>Ekspresikan Gayamu</span></div></footer>
+
+  <footer>
+    <div class="wrap footer-inner">
+      <span>© <span id="year">2026</span> WYSTEEL</span>
+      <span>Ekspresikan Gayamu</span>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var year = document.getElementById("year");
+      if (year) year.textContent = new Date().getFullYear();
+
+      var toggle = document.querySelector(".menu-toggle");
+      var nav = document.getElementById("nav-links");
+      if (toggle && nav) {
+        toggle.addEventListener("click", function () {
+          var isOpen = nav.classList.toggle("open");
+          toggle.setAttribute("aria-expanded", String(isOpen));
+        });
+        nav.querySelectorAll("a").forEach(function (link) {
+          link.addEventListener("click", function () {
+            nav.classList.remove("open");
+            toggle.setAttribute("aria-expanded", "false");
+          });
+        });
+      }
+    })();
+  </script>
 </body>
 </html>
